@@ -1,0 +1,87 @@
+.back{
+    background-color: #fff;
+    color: #404040;
+    transform: rotateY(180deg);
+    position: absolute;
+    width: 100%;
+    padding: 25px;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    h2{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        letter-spacing: 2px;
+        justify-content: center;
+        flex-direction: column;
+        span{
+            display: block;
+            margin: 0;
+        }
+        width: 55%;
+        @include dancing-script(700);
+        font-size: 70px;
+    }
+    .date{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        width: 75%;
+        padding: 15px 0;
+        justify-content: space-between;
+        @include playfair-display(400);
+        div{
+            font-stretch: condensed;
+            padding: 10px;
+            &:nth-child(odd){
+                border: 1px solid #404040;
+                border-left: none;
+                border-right: none;
+            }
+            &:nth-child(even){
+                div{
+                    font-size: 35px;
+                    line-height: 1;
+                }
+                
+            }
+            position: relative;
+            span{
+                left: 0;
+                transform: translateX(50%);
+                // display: block;
+                position: absolute;
+                &.month{
+                    top: -10px;
+                }
+                &.year{
+                    bottom: -10px;
+                }
+            }
+            
+        }
+    }
+    p,a{
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #404040;
+    }
+    .plan{
+        @include dancing-script(700);
+    }
+
+    @media (min-width:768px) {
+        h2{
+            line-height: 1;
+        }
+        .date{
+            div{
+                letter-spacing: 2px;
+            }
+        }
+        .plan{
+            font-size: 20px;
+        }
+    }
+}
